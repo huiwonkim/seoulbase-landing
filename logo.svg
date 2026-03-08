@@ -1,0 +1,19 @@
+<svg width="420" height="96" viewBox="0 0 420 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SeoulBase logo">
+  <defs>
+    <style>
+      .word { font: 700 38px 'Manrope', 'Plus Jakarta Sans', 'Segoe UI', sans-serif; letter-spacing: -0.6px; }
+    </style>
+  </defs>
+
+  <!-- Icon: Gwanghwamun-inspired gate -->
+  <g transform="translate(8 8)">
+    <rect x="8" y="8" width="64" height="64" rx="20" fill="#E63946"/>
+    <path d="M18 34H62" stroke="white" stroke-width="3.4" stroke-linecap="round"/>
+    <path d="M22 34L30 26H50L58 34" stroke="white" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M26 34V54M34 34V54M46 34V54M54 34V54" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    <path d="M22 54H58" stroke="white" stroke-width="3.4" stroke-linecap="round"/>
+  </g>
+
+  <text x="96" y="61" class="word" fill="#111111">Seoul</text>
+  <text x="196" y="61" class="word" fill="#E63946">Base</text>
+</svg>

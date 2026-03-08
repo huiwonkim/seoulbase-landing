@@ -1,0 +1,19 @@
+<svg width="420" height="96" viewBox="0 0 420 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SeoulBase logo rounded variant">
+  <defs>
+    <style>
+      .word { font: 700 38px 'Manrope', 'Plus Jakarta Sans', 'Segoe UI', sans-serif; letter-spacing: -0.6px; }
+    </style>
+  </defs>
+
+  <!-- Rounded variant: softer Gwanghwamun gate -->
+  <g transform="translate(8 8)">
+    <rect x="8" y="8" width="64" height="64" rx="24" fill="#E63946"/>
+    <path d="M19 35H61" stroke="white" stroke-width="3.6" stroke-linecap="round"/>
+    <path d="M23 35C26 31 29 28 31 26H49C51 28 54 31 57 35" stroke="white" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M27 35V54M35 35V54M45 35V54M53 35V54" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    <path d="M23 54H57" stroke="white" stroke-width="3.6" stroke-linecap="round"/>
+  </g>
+
+  <text x="96" y="61" class="word" fill="#111111">Seoul</text>
+  <text x="196" y="61" class="word" fill="#E63946">Base</text>
+</svg>

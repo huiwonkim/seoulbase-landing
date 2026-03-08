@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SeoulBase | Settle in Seoul with Confidence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --text: #111111;
+        --muted: #525252;
+        --line: #e7e7e7;
+        --soft: #fcfcfc;
+        --brand: #e63946;
+        --brand-dark: #b4232f;
+        --radius: 16px;
+        --shadow: 0 20px 48px rgba(17, 17, 17, 0.06);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Manrope", sans-serif;
+        background:
+          linear-gradient(90deg, rgba(17, 17, 17, 0.03) 1px, transparent 1px)
+            0 0 / 44px 44px,
+          linear-gradient(rgba(17, 17, 17, 0.03) 1px, transparent 1px) 0 0 /
+            44px 44px,
+          #fff;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      .container {
+        width: min(1120px, 92vw);
+        margin: 0 auto;
+      }
+
+      section {
+        padding: 72px 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+        padding: 8px 12px 8px 8px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fff;
+      }
+
+      .brand-logo {
+        width: 164px;
+        height: auto;
+        display: block;
+      }
+
+      .brand-note {
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brand-dark);
+      }
+
+      .hero {
+        padding: 96px 0 80px;
+      }
+
+      .hero-card {
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: #ffffff;
+        box-shadow: var(--shadow);
+        padding: clamp(28px, 5vw, 56px);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 4px;
+        width: 160px;
+        background: var(--brand);
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 5.2vw, 3.8rem);
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        max-width: 760px;
+      }
+
+      .hero p {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: clamp(1rem, 2.2vw, 1.2rem);
+        max-width: 700px;
+      }
+
+      .btn {
+        margin-top: 30px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #111;
+        border-radius: 12px;
+        padding: 14px 26px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        text-decoration: none;
+        background: #111111;
+        color: #ffffff;
+        transition: transform 160ms ease, box-shadow 160ms ease,
+          background 160ms ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        background: var(--brand);
+        border-color: var(--brand);
+        box-shadow: 0 12px 24px rgba(230, 57, 70, 0.28);
+      }
+
+      .section-title {
+        font-size: clamp(1.5rem, 3vw, 2.25rem);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+
+      .section-sub {
+        margin-top: 14px;
+        color: var(--muted);
+        max-width: 720px;
+      }
+
+      .cards {
+        margin-top: 28px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 24px;
+        background: #fff;
+        transition: transform 160ms ease, border-color 160ms ease,
+          box-shadow 160ms ease;
+      }
+
+      .card:hover {
+        transform: translateY(-2px);
+        border-color: #cfcfcf;
+        box-shadow: 0 10px 24px rgba(17, 17, 17, 0.06);
+      }
+
+      .card h3 {
+        font-size: 1.05rem;
+      }
+
+      .card p {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .how .step {
+        font-size: 0.85rem;
+        color: var(--brand);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .pricing-grid {
+        margin-top: 28px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .price-card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 26px;
+        background: #fff;
+        position: relative;
+      }
+
+      .price-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          rgba(230, 57, 70, 0.95),
+          rgba(230, 57, 70, 0.22)
+        );
+      }
+
+      .price {
+        margin-top: 8px;
+        font-size: 2rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+      }
+
+      .price-card p {
+        margin-top: 10px;
+        color: var(--muted);
+      }
+
+      .audience {
+        background: var(--soft);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .audience-list {
+        margin-top: 28px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .audience-item {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 18px;
+        background: #fff;
+        font-weight: 600;
+      }
+
+      .cta {
+        text-align: center;
+      }
+
+      .form-wrap {
+        margin-top: 28px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: clamp(22px, 4vw, 34px);
+        background: #fff;
+        box-shadow: var(--shadow);
+      }
+
+      form {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .field label {
+        font-size: 0.88rem;
+        font-weight: 600;
+      }
+
+      .field input,
+      .field textarea,
+      .field select {
+        border: 1px solid #d0d5dd;
+        border-radius: 12px;
+        padding: 12px 14px;
+        font: inherit;
+        color: var(--text);
+        background: #fff;
+      }
+
+      .field input:focus,
+      .field textarea:focus,
+      .field select:focus {
+        outline: none;
+        border-color: var(--brand);
+        box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.12);
+      }
+
+      .field textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .span-2 {
+        grid-column: span 2;
+      }
+
+      .submit {
+        margin-top: 8px;
+        border: 1px solid #111;
+        border-radius: 12px;
+        background: #111111;
+        color: #fff;
+        padding: 13px 16px;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 150ms ease, border-color 150ms ease;
+      }
+
+      .submit:hover {
+        background: var(--brand);
+        border-color: var(--brand);
+      }
+
+      @media (max-width: 900px) {
+        .cards,
+        .pricing-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .audience-list {
+          grid-template-columns: 1fr;
+        }
+
+        form {
+          grid-template-columns: 1fr;
+        }
+
+        .span-2 {
+          grid-column: auto;
+        }
+
+        .brand {
+          padding: 6px 10px 6px 6px;
+        }
+
+        .brand-logo {
+          width: 142px;
+        }
+
+        .brand-note {
+          font-size: 0.7rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div class="container hero-card">
+          <div class="brand" aria-label="SeoulBase brand">
+            <img
+              src="logo-rounded.svg"
+              alt="SeoulBase logo"
+              class="brand-logo"
+            />
+            <span class="brand-note">Main mark</span>
+          </div>
+          <h1>Live in Seoul without the confusion</h1>
+          <p>
+            SeoulBase helps foreigners navigate housing, visas, and life setup in
+            Korea.
+          </p>
+          <a href="#apply" class="btn">Start planning your life in Seoul</a>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <h2 class="section-title">Moving to Korea is exciting, but confusing.</h2>
+          <p class="section-sub">
+            Finding housing, understanding visa steps, setting up a bank account,
+            and getting a local phone plan can feel overwhelming when everything is
+            new.
+          </p>
+          <div class="cards">
+            <article class="card">
+              <h3>Housing friction</h3>
+              <p>
+                Neighborhood research, contracts, and deposits are hard to manage
+                from abroad.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Visa uncertainty</h3>
+              <p>
+                Requirements differ by purpose of stay and are easy to misread.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Daily life setup</h3>
+              <p>
+                Banking and phone setup can become blockers in your first weeks.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <h2 class="section-title">SeoulBase makes your relocation smooth.</h2>
+          <p class="section-sub">
+            We combine practical guidance with local know-how so you can arrive with
+            a clear plan, avoid common mistakes, and start your life in Seoul with
+            confidence.
+          </p>
+        </div>
+      </section>
+
+      <section class="how">
+        <div class="container">
+          <h2 class="section-title">How it works</h2>
+          <div class="cards">
+            <article class="card">
+              <p class="step">Step 1</p>
+              <h3>Book consultation</h3>
+            </article>
+            <article class="card">
+              <p class="step">Step 2</p>
+              <h3>Plan your Seoul life</h3>
+            </article>
+            <article class="card">
+              <p class="step">Step 3</p>
+              <h3>Start living smoothly</h3>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <h2 class="section-title">Simple pricing</h2>
+          <div class="pricing-grid">
+            <article class="price-card">
+              <h3>Starter</h3>
+              <p class="price">$79</p>
+              <p>Seoul living consultation</p>
+            </article>
+            <article class="price-card">
+              <h3>Setup</h3>
+              <p class="price">$399</p>
+              <p>Housing + life setup guidance</p>
+            </article>
+            <article class="price-card">
+              <h3>Relocation</h3>
+              <p class="price">$1199</p>
+              <p>Full relocation support</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="audience">
+        <div class="container">
+          <h2 class="section-title">Who this is for</h2>
+          <div class="audience-list">
+            <div class="audience-item">Remote workers</div>
+            <div class="audience-item">Students</div>
+            <div class="audience-item">Foreign professionals</div>
+            <div class="audience-item">People curious about living in Seoul</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="apply" class="cta">
+        <div class="container">
+          <h2 class="section-title">Apply for SeoulBase</h2>
+          <div class="form-wrap">
+            <form>
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required />
+              </div>
+              <div class="field">
+                <label for="country">Country</label>
+                <input id="country" name="country" type="text" required />
+              </div>
+              <div class="field">
+                <label for="arrival">Planned arrival date</label>
+                <input id="arrival" name="arrival" type="date" required />
+              </div>
+              <div class="field">
+                <label for="stay">Length of stay</label>
+                <select id="stay" name="stay" required>
+                  <option value="">Select one</option>
+                  <option>Under 6 months</option>
+                  <option>6-12 months</option>
+                  <option>1-2 years</option>
+                  <option>2+ years</option>
+                </select>
+              </div>
+              <div class="field span-2">
+                <label for="help">What help do you need</label>
+                <textarea id="help" name="help" required></textarea>
+              </div>
+              <div class="field span-2">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required />
+              </div>
+              <div class="span-2">
+                <button class="submit" type="submit">Apply for SeoulBase</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
