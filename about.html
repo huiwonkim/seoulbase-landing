@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | SeoulBase</title>
+    <link rel="icon" type="image/svg+xml" href="logo-rounded.svg" />
+    <link rel="shortcut icon" href="logo-rounded.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --text: #111111;
+        --muted: #525252;
+        --line: #e7e7e7;
+        --soft: #fcfcfc;
+        --brand: #e63946;
+        --brand-dark: #b4232f;
+        --radius: 16px;
+        --shadow: 0 20px 48px rgba(17, 17, 17, 0.06);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Manrope", sans-serif;
+        background:
+          linear-gradient(90deg, rgba(17, 17, 17, 0.03) 1px, transparent 1px)
+            0 0 / 44px 44px,
+          linear-gradient(rgba(17, 17, 17, 0.03) 1px, transparent 1px) 0 0 /
+            44px 44px,
+          #fff;
+        color: var(--text);
+        line-height: 1.7;
+      }
+
+      .container {
+        width: min(1120px, 92vw);
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.9);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .header-inner {
+        min-height: 74px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .header-brand img {
+        width: 148px;
+        height: auto;
+        display: block;
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .nav-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        padding: 0 14px;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        color: var(--text);
+        font-size: 0.92rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .nav-link:hover {
+        border-color: var(--line);
+        background: #fff;
+      }
+
+      .nav-link:focus-visible {
+        outline: none;
+        border-color: var(--brand);
+        box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.12);
+      }
+
+      .nav-link.is-active {
+        background: #111;
+        border-color: #111;
+        color: #fff;
+      }
+
+      .about {
+        padding: 88px 0;
+      }
+
+      .about-card {
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: #fff;
+        box-shadow: var(--shadow);
+        padding: clamp(28px, 5vw, 56px);
+      }
+
+      .about-card::before {
+        content: "";
+        display: block;
+        width: 72px;
+        height: 4px;
+        border-radius: 999px;
+        background: var(--brand);
+        margin-bottom: 18px;
+      }
+
+      h1,
+      h2,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 4.8vw, 3.4rem);
+        line-height: 1.12;
+        letter-spacing: -0.03em;
+      }
+
+      .lead {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: clamp(1.04rem, 2vw, 1.2rem);
+        max-width: 800px;
+      }
+
+      .about-intro {
+        margin-top: 26px;
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 22px;
+        align-items: start;
+      }
+
+      .founder-photo {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        border-radius: 16px;
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        background: #f5f5f5;
+      }
+
+      .story {
+        max-width: 820px;
+      }
+
+      .story p + p {
+        margin-top: 18px;
+      }
+
+      .about-body {
+        margin-top: 24px;
+        max-width: 820px;
+      }
+
+      .about-body p + p {
+        margin-top: 18px;
+      }
+
+      .cta-wrap {
+        margin-top: 34px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #111;
+        border-radius: 12px;
+        padding: 14px 26px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        text-decoration: none;
+        background: #111111;
+        color: #ffffff;
+        transition: transform 160ms ease, box-shadow 160ms ease,
+          background 160ms ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        background: var(--brand);
+        border-color: var(--brand);
+        box-shadow: 0 12px 24px rgba(230, 57, 70, 0.28);
+      }
+
+      .btn:focus-visible {
+        outline: none;
+        border-color: var(--brand);
+        box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15);
+      }
+
+      @media (max-width: 900px) {
+        .header-inner {
+          min-height: 66px;
+        }
+
+        .header-brand img {
+          width: 128px;
+        }
+
+        .about {
+          padding: 64px 0;
+        }
+
+        .about-intro {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+
+        .founder-photo {
+          max-width: 260px;
+          aspect-ratio: 1 / 1;
+        }
+
+        .story p + p {
+          margin-top: 15px;
+        }
+
+        .about-body {
+          margin-top: 18px;
+        }
+
+        .about-body p + p {
+          margin-top: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="header-brand" aria-label="SeoulBase home">
+          <img src="logo-rounded.svg" alt="SeoulBase logo" />
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link is-active" aria-current="page">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="about">
+        <div class="container">
+          <article class="about-card">
+            <h1>About</h1>
+            <p class="lead">Hi, I&rsquo;m Heewon Kim, the founder of SeoulBase.</p>
+
+            <div class="about-intro">
+              <img
+                src="seoulbase founder.jpg"
+                alt="Heewon Kim, founder of SeoulBase"
+                class="founder-photo"
+              />
+              <div class="story">
+                <p>
+                  I was born in southern Korea and have lived in Seoul since my university years. I&rsquo;ve studied here, worked here, and moved homes multiple times across different neighborhoods. Through those experiences, I&rsquo;ve gained a practical understanding of how life in Seoul actually works - not just as a visitor, but as a resident.
+                </p>
+                <p>
+                  At one point, I experienced a rental fraud case myself and handled the legal process independently. That experience gave me a deep understanding of the Korean housing system - including its risks, legal structure, and the common mistakes both locals and foreigners can make.
+                </p>
+              </div>
+            </div>
+
+            <div class="about-body">
+              <p>
+                I also spent a year in Canada on a working holiday visa. Living abroad without clear guidance taught me how overwhelming relocation can feel - from navigating housing contracts to adapting to daily systems in a foreign country.
+              </p>
+              <p>
+                Over the years, as a Korea-based travel influencer, I&rsquo;ve met many friends abroad who became interested in living in Seoul. I naturally began helping them plan their stay, choose neighborhoods, understand contracts, and avoid costly mistakes.
+              </p>
+              <p>
+                SeoulBase was created to provide that same clarity and structure to professionals planning to live in Seoul for 3-12 months and more.
+              </p>
+              <p>
+                I understand Seoul from both perspectives - as a local insider and as someone who has navigated life abroad alone. My role is to help you set up your life in Seoul safely, strategically, and with confidence.
+              </p>
+            </div>
+
+            <div class="cta-wrap">
+              <a href="index.html#apply" class="btn">Apply for SeoulBase</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
