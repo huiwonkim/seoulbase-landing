@@ -1,0 +1,11 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gwanghwamun favicon">
+  <g stroke="#111111" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 20C14 20 17 18 19 15H45C47 18 50 20 54 20" />
+    <path d="M12 25C18 26 25 27 32 27C39 27 46 26 52 25" />
+    <path d="M9 33C14 33 18 31 21 28H43C46 31 50 33 55 33" />
+    <path d="M11 38C18 39 25 40 32 40C39 40 46 39 53 38" />
+    <rect x="13" y="40" width="38" height="17" rx="1" />
+    <path d="M21 57V49C21 46.8 22.8 45 25 45C27.2 45 29 46.8 29 49V57" />
+    <path d="M35 57V49C35 46.8 36.8 45 39 45C41.2 45 43 46.8 43 49V57" />
+  </g>
+</svg>
